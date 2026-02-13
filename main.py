@@ -1,6 +1,5 @@
 """
 Discord бот для Aviasales Roblox - улучшенная версия
-с поддержкой .env файла для переменных окружения
 """
 import discord
 from discord.ext import commands, tasks
@@ -18,7 +17,6 @@ import traceback
 import sys
 from collections import deque
 import aiohttp
-from dotenv import load_dotenv  # <-- добавлен импорт
 
 from utils.database import DatabaseHandler
 from utils.embeds import Embeds
@@ -1577,9 +1575,6 @@ async def main():
         logger.info("=" * 50)
         logger.info("🚀 Запуск Aviasales Bot v2.0.0")
         logger.info("=" * 50)
-
-        # Загружаем переменные из .env файла
-        load_dotenv()  # <-- добавлен вызов
 
         # Загрузка конфигурации
         config_manager = ConfigManager()
