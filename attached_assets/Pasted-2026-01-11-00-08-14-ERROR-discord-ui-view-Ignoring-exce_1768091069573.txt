@@ -1,0 +1,26 @@
+2026-01-11 00:08:14 ERROR    discord.ui.view Ignoring exception in view <PassengerView timeout=None children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎫 Забронировать' emoji=<PartialEmoji animated=False name='🎫' id=None> row=1 sku_id=None id=5>
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/ui/view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/runner/workspace/cogs/flights.py", line 664, in book_button
+    await interaction.response.send_message(embed=booking_embed, ephemeral=True)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-01-11 00:08:14,894 - discord.ui.view - ERROR - Ignoring exception in view <PassengerView timeout=None children=3> for item <Button style=<ButtonStyle.success: 3> url=None disabled=False label='🎫 Забронировать' emoji=<PartialEmoji animated=False name='🎫' id=None> row=1 sku_id=None id=5>
+Traceback (most recent call last):
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/ui/view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+  File "/home/runner/workspace/cogs/flights.py", line 664, in book_button
+    await interaction.response.send_message(embed=booking_embed, ephemeral=True)
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/discord/webhook/async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+/home/runner/workspace/cogs/flights.py:539: UserWarning: Detected filter using positional arguments. Prefer using the 'filter' keyword argument instead.
+  query = subscriptions_ref.where('user_id', '==', str(interaction.user.id)).where('flight_id', '==', self.flight_id).limit(1)
